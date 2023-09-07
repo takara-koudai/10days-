@@ -670,6 +670,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			//イージーモード
 			
 
+
+
 			//最初に戻る
 			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
 			{
