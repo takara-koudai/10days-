@@ -215,9 +215,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		{
 		case scene0:
 
-
-			//次のシーンへ
-			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
+			if (keys[DIK_E] && preKeys[DIK_E] == 0)
 			{
 				SCENE = scene1;
 
@@ -254,31 +252,25 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 			}
 
-			//イージーモード
-			if (keys[DIK_E] && preKeys[DIK_E] == 0)
-			{
-				SCENE = scene3;
-			}
 
 			//ノーマルモード
 			if (keys[DIK_N] && preKeys[DIK_N] == 0)
 			{
-				SCENE = scene4;
+				SCENE = scene3;
 			}
 
 			//ハードモード
 			if (keys[DIK_H] && preKeys[DIK_H] == 0)
 			{
-				SCENE = scene5;
+				SCENE = scene4;
 			}
-
+			
 
 			break;
 
 		case scene1:
 
-
-			//ゲームシーン
+			//イージーモード
 
 			idouFlag = false;
 			idouFlag2 = false;
@@ -454,7 +446,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 				Answer.position.Y <= box2.position.Y + box2.radius &&
 				box2.position.Y <= Answer.position.Y + Answer.radius)
 			{
-				Novice::ScreenPrintf(30, 200,"owari");
+				Novice::ScreenPrintf(30, 200, "owari");
 				AnswerEnd = true;
 				if (AnswerEnd == true)
 				{
@@ -625,7 +617,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			{
 				if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
 				{
-					SCENE = scene6;
+					SCENE = scene5;
 				}
 			}
 
@@ -647,7 +639,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			Novice::GetMousePosition(&mauseX4, &mauseY4);
 
 
+
+
 			break;
+
+
 
 		case scene2:
 
@@ -667,53 +663,32 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		case scene3:
 
-			//イージーモード
+			//ノーマルモード
+			
+			//最初に戻る
+			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
+			{
+				SCENE = scene0;
+			}
 			
 
-			//最初に戻る
-			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
-			{
-				SCENE = scene0;
-			}
-
 			break;
 
-		case scene4:
-			 
-
-			//ノーマルモード
-
-
-			//最初に戻る
-			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
-			{
-				SCENE = scene0;
-			}
-
-			break;
-
-
-		case scene5:
-
+		case scene4: 
 
 			//ハードモード
 
-
 			//最初に戻る
 			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
 			{
 				SCENE = scene0;
 			}
 
-
 			break;
 
-
-		case scene6:
-
+		case scene5:
 
 			//不正解画面
-
 
 			//最初に戻る
 			if (keys[DIK_SPACE] && preKeys[DIK_SPACE] == 0)
@@ -804,31 +779,19 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 			break;
 
+
 		case scene2:
-
-
-			//Novice::DrawBox(0, 0, 1280, 720, 0.0f, WHITE, kFillModeSolid);
+			
 
 			Novice::ScreenPrintf(100, 100, "clear");
 
 			Novice::ScreenPrintf(100, 120, "Return Space keys");
 
 
-
 			break;
 
 
 		case scene3:
-
-
-			Novice::ScreenPrintf(100, 100, "easyMode");
-
-			Novice::ScreenPrintf(100, 120, "Return Space keys");
-
-
-			break;
-
-		case scene4:
 
 
 			Novice::ScreenPrintf(100, 100, "nomarlMode");
@@ -838,7 +801,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 			break;
 
-		case scene5:
+		case scene4:
 
 
 			Novice::ScreenPrintf(100, 100, "hardMode");
@@ -848,12 +811,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 			break;
 
-		case scene6:
+		case scene5:
 
 
 			Novice::ScreenPrintf(100, 100, "end");
 			Novice::ScreenPrintf(100, 120, "Return Space keys");
-
 
 			break;
 
