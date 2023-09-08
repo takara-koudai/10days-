@@ -139,6 +139,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	int SecondAnswerEnd12 = false;
 
 
+
 	//回答欄
 	object box =
 	{
