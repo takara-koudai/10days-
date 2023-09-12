@@ -594,6 +594,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			{
 				Novice::ScreenPrintf(10, 90, "atari");
 				idouFlag = true;
+
 			}
 
 			//左から2番目
@@ -634,6 +635,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 				{
 					box.position.X = mauseX - 30;
 					box.position.Y = mauseY - 30;
+					
 
 					idouFlag2 = false;
 					idouFlag3 = false;
